@@ -1,6 +1,11 @@
 SubdomainFinder
 SubdomainFinder is a Bash script designed to download and manage validated subdomain resources for given domains. The script provides options for processing single or multiple domains and saving the results into specified output files.
 
+Instructions:
+Save the script: Copy the script to a file, e.g., subdomain_finder.sh.
+Make it executable: Run chmod +x subdomain_finder.sh to make the script executable.
+Run the script: Execute the script with ./subdomain_finder.sh
+
 Features
 Download validated subdomains for a single domain
 Download validated subdomains for multiple domains from a file
@@ -22,13 +27,17 @@ This command will download the validated subdomains for each domain in domains.t
 Download validated resources for a single domain without specifying an output file:
 bash
 Copy code
+
 ./subdomain_finder.sh -u target.com
+
 This command will download the validated subdomains for target.com and save them to target.com_valid_resources.txt.
 
 Download validated resources for multiple domains without specifying an output file:
 bash
 Copy code
+
 ./subdomain_finder.sh -d domains.txt
+
 This command will download the validated subdomains for each domain in domains.txt and save them in individual files.
 
 Example domains.txt
