@@ -1,62 +1,43 @@
-SubdomainFinder
-SubdomainFinder is a Bash script designed to download and manage validated subdomain resources for given domains. The script provides options for processing single or multiple domains and saving the results into specified output files.
+To add an `-out output.txt` option that consolidates all the validated resources into a single output file, here's how you can modify the script:
 
-Instructions:
-Save the script: Copy the script to a file, e.g., subdomain_finder.sh.
-Make it executable: Run chmod +x subdomain_finder.sh to make the script executable.
-Run the script: Execute the script with ./subdomain_finder.sh
+### Explanation:
+- **`-o output.txt`:** The script now accepts an `-o` option for specifying an output file. If this option is used, all validated resources from either a single domain (`-u`) or multiple domains (`-d`) are appended to the specified output file (`output.txt` in this case).
+- **Appending Output:** The script appends the results to the `OUTPUT_FILE` with a newline after each domain's resources.
 
-Features
-Download validated subdomains for a single domain
-Download validated subdomains for multiple domains from a file
-Save results to a specified output file
-Automatically handles appending results when saving to an output file
-Usage
-Download validated resources for a single domain and save to output.txt:
-bash
-Copy code
-./subdomain_finder.sh -u target.com -o output.txt
-This command will download the validated subdomains for target.com and save them to output.txt.
+### Usage:
+1. **Download validated resources for a single domain and save to `output.txt`:**
+   ```bash
+   ./subdomain_finder.sh -u target.com -o output.txt
+   ```
+   This will download the validated resources for `target.com` and save them to `output.txt`.
 
-Download validated resources for multiple domains listed in domains.txt and save to output.txt:
-bash
-Copy code
-./subdomain_finder.sh -d domains.txt -o output.txt
-This command will download the validated subdomains for each domain in domains.txt and append them to output.txt.
+2. **Download validated resources for multiple domains listed in `domains.txt` and save to `output.txt`:**
+   ```bash
+   ./subdomain_finder.sh -d domains.txt -o output.txt
+   ```
+   This will download the validated resources for each domain in `domains.txt` and append them to `output.txt`.
 
-Download validated resources for a single domain without specifying an output file:
-bash
-Copy code
+3. **Download validated resources for a single domain without specifying an output file:**
+   ```bash
+   ./subdomain_finder.sh -u target.com
+   ```
+   This will download the validated resources for `target.com` and save them to `target.com_valid_resources.txt`.
 
-./subdomain_finder.sh -u target.com
+4. **Download validated resources for multiple domains without specifying an output file:**
+   ```bash
+   ./subdomain_finder.sh -d domains.txt
+   ```
+   This will download the validated resources for each domain in `domains.txt` and save them in individual files.
 
-This command will download the validated subdomains for target.com and save them to target.com_valid_resources.txt.
-
-Download validated resources for multiple domains without specifying an output file:
-bash
-Copy code
-
-./subdomain_finder.sh -d domains.txt
-
-This command will download the validated subdomains for each domain in domains.txt and save them in individual files.
-
-Example domains.txt
-txt
-Copy code
+### Example `domains.txt`:
+```
 example.com
 google.com
 yahoo.com
-Script Execution Examples
-Running ./subdomain_finder.sh -u google.com -o output.txt will append the validated subdomains of google.com to output.txt.
+```
 
-Running ./subdomain_finder.sh -d domains.txt -o output.txt will append all validated subdomains from each domain listed in domains.txt to output.txt.
+### Script Execution:
+- Running `./subdomain_finder.sh -u google.com -o output.txt` will append `google.com` validated subdomains to `output.txt`.
+- Running `./subdomain_finder.sh -d domains.txt -o output.txt` will append all validated subdomains from each domain in `domains.txt` to `output.txt`.
 
-Explanation
--o output.txt:
-The script accepts an -o option for specifying an output file. If this option is used, all validated resources from either a single domain (-u) or multiple domains (-d) are appended to the specified output file (output.txt in this case).
-
-Appending Output:
-The script appends the results to the OUTPUT_FILE with a newline after each domain's resources, ensuring clarity and separation between data from different domains.
-
-License
-This project is licensed under the MIT License.
+This approach gives you flexibility in saving outputs either separately or all into one file.
