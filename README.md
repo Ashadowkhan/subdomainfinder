@@ -1,4 +1,3 @@
-To add an `-out output.txt` option that consolidates all the validated resources into a single output file, here's how you can modify the script:
 
 ### Explanation:
 - **`-o output.txt`:** The script now accepts an `-o` option for specifying an output file. If this option is used, all validated resources from either a single domain (`-u`) or multiple domains (`-d`) are appended to the specified output file (`output.txt` in this case).
