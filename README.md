@@ -6,6 +6,9 @@
 ### Usage:
 1. **Download validated resources for a single domain and save to `output.txt`:**
    ```bash
+   git clone https://github.com/Ashadowkhan/subdomainfinder.git
+   cd subdomainfinder
+   chmod +x ./subdomain_finder.sh
    ./subdomain_finder.sh -u target.com -o output.txt
    ```
    This will download the validated resources for `target.com` and save them to `output.txt`.
